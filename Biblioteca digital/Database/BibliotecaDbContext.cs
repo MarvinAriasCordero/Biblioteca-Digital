@@ -1,4 +1,5 @@
-﻿using Biblioteca_digital.Model;
+﻿using Biblioteca_digital.Database.config;
+using Biblioteca_digital.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +21,7 @@ namespace Biblioteca_digital.Database
         {
             base.OnModelCreating(builder);
 
-            //builder.ConfigureAuthbasic();
+            builder.ConfigureAuthbasic();
 
             //builder.SetUpDomainContext();
 
