@@ -1,0 +1,16 @@
+services:
+  bibliotecadigital:
+    image: ${DOCKER_REGISTRY-}bibliotecadigital
+    build:
+      context: .
+      dockerfile: Biblioteca digital/Dockerfile
+    depends_on: 
+       - "SqlServer"
+
+  SqlServer:
+    image: mcr.microsoft.com/azure-sql-edge
+    ports:
+      - "1433:1433"
+    environment:
+      - SA_PASSWORD=@OdiN.7072$
+      - ACCEPT_EULA=Y 

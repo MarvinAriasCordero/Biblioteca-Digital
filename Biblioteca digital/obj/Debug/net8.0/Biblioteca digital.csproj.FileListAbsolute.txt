@@ -1,0 +1,7 @@
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.csproj.AssemblyReference.cache
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.AssemblyInfoInputs.cache
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.AssemblyInfo.cs
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca digital\obj\Debug\net8.0\Biblioteca digital.MvcApplicationPartsAssemblyInfo.cache
