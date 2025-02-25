@@ -10,10 +10,10 @@ namespace Biblioteca_digital.Servicios
 
         private readonly UserManager<Usuario> _userManager;
         private readonly SignInManager<Usuario> _signInManager;
-        private readonly ITokenProvider _tokenProvider;
+        private readonly IServicioToken _tokenProvider;
 
         public ServicioAutenticacion(UserManager<Usuario> userManager,
-            SignInManager<Usuario> signInManager, ITokenProvider tokenProvider)
+            SignInManager<Usuario> signInManager, IServicioToken tokenProvider)
         {
             _userManager = userManager;
             _signInManager = signInManager;

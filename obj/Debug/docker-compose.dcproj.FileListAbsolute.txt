@@ -1,0 +1,40 @@
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Biblioteca digital.deps.json
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Biblioteca digital.runtimeconfig.json
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\appsettings.Development.json
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\appsettings.json
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Biblioteca digital.staticwebassets.endpoints.json
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Biblioteca digital.exe
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Biblioteca digital.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\bin\Debug\Biblioteca digital.pdb
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital\obj\Debug\docker-c.35A3FFBA.Up2Date
