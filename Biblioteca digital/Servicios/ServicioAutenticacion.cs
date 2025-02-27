@@ -5,13 +5,16 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Biblioteca_digital.Servicios
 {
+    // Clase que implementa el servicio de autenticación
     public class ServicioAutenticacion : IServicioAutenticacion
     {
 
+        // Dependencias necesarias para la autenticación y gestión de usuarios
         private readonly UserManager<Usuario> _userManager;
         private readonly SignInManager<Usuario> _signInManager;
         private readonly IServicioToken _tokenProvider;
 
+        // Constructor que recibe las dependencias mediante inyección de dependencias
         public ServicioAutenticacion(UserManager<Usuario> userManager,
             SignInManager<Usuario> signInManager, IServicioToken tokenProvider)
         {
@@ -21,6 +24,7 @@ namespace Biblioteca_digital.Servicios
 
         }
 
+        // Método que maneja el inicio de sesión
         public async Task<dynamic> Login(LoginRequest loginRequest)
         {
             var user = await _userManager.FindByEmailAsync(loginRequest.Email);
@@ -55,6 +59,7 @@ namespace Biblioteca_digital.Servicios
 
         }
 
+        // Método para registrar un nuevo usuario
         public async Task<dynamic> Register(RegisterRequest registroRequest)
         {
 

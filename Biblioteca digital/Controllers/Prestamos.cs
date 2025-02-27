@@ -74,7 +74,7 @@ public class Prestamos : ControllerBase
 
     }
 
-    [HttpPost("witdraw")]
+    [HttpPost("withdraw")]
     public async Task<ActionResult<dynamic>> CreateWithdraw(CreateWithdraw request)
     {
         try

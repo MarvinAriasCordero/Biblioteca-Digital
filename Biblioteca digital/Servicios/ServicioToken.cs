@@ -10,13 +10,14 @@ using System.Text;
 
 namespace Biblioteca_digital.Servicios
 {
+    // Implementación del servicio de tokens JWT
     public class ServicioToken : IServicioToken
     {
         private readonly UserManager<Usuario> _userManager;
         private readonly JWTOptions _jwtOptions;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-
+        // Constructor con inyección de dependencias
         public ServicioToken(UserManager<Usuario> userManager, IOptions<JWTOptions> jWTOptions,
             RoleManager<IdentityRole> roleManager)
         {
@@ -25,6 +26,7 @@ namespace Biblioteca_digital.Servicios
             _roleManager = roleManager;
         }
 
+        // Método para generar un token JWT para un usuario autenticado
         public async Task<string> WriteToken(Usuario user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

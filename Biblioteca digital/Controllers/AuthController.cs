@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Biblioteca_digital.Controllers
 {
-    [ApiController]
-        [Route("/api/v1/[controller]")]
-        public class authController : ControllerBase
+    [ApiController]  
+    [Route("/api/v1/[controller]")]  // Define la ruta base del controlador como "/api/v1/authController"
+
+    // Rutas de autorizacón......
+    public class authController : ControllerBase
         {
             private readonly UserManager<Usuario> _userManager;
             private readonly IServicioAutenticacion _authService;

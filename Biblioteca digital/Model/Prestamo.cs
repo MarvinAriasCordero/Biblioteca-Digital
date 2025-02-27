@@ -3,22 +3,22 @@
     // Representa un préstamo de un libro en la biblioteca digital.
     public class Prestamo
     {
-        /// <summary>
+      
         /// Identificador único del préstamo.
-        /// </summary>
+      
         public Guid Id { get; set; }
 
         // Identificador del libro prestado.
         public string LibroId { get; set; }
 
-        /// <summary>
+        
         /// Libro asociado al préstamo.
-        /// </summary>
+       
         public Libro? Libro { get; set; }
 
-        /// <summary>
+        
         /// Identificador del usuario que realizó el préstamo.
-        /// </summary>
+       
         public string UsuarioId { get; set; }
 
         ///// <summary>

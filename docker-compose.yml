@@ -10,9 +10,9 @@ services:
        - "SqlServer"
 
   SqlServer:
-    image: mcr.microsoft.com/mssql/server:2022-latest #mcr.microsoft.com/azure-sql-edge
+    image: mcr.microsoft.com/mssql/server:2022-latest 
     ports:
       - "1433:1433"
     environment:
-      - SA_PASSWORD=LibCmos.145! #OdiN.7072$
+      - SA_PASSWORD=LibCmos.145! 
       - ACCEPT_EULA=Y 
