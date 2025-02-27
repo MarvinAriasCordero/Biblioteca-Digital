@@ -15,14 +15,17 @@ namespace Biblioteca_digital.Controllers
             private readonly UserManager<Usuario> _userManager;
             private readonly IServicioAutenticacion _authService;
 
-            public authController(UserManager<Usuario> userManager,
+        // Constructor que recibe las dependencias mediante inyección de dependencias
+        public authController(UserManager<Usuario> userManager,
                 IServicioAutenticacion authService)
             {
                 _userManager = userManager;
                 _authService = authService;
             }
 
-            [HttpPost("login")]
+
+        // Endpoint para iniciar sesión
+        [HttpPost("login")]
             public async Task<ActionResult<dynamic>> Login(LoginRequest loginRequest)
             {
 
@@ -33,7 +36,8 @@ namespace Biblioteca_digital.Controllers
 
             }
 
-            [HttpPost("register")]
+        // Endpoint para registrar un nuevo usuario
+        [HttpPost("register")]
             public async Task<ActionResult<dynamic>> Register(RegisterRequest request)
             {
 

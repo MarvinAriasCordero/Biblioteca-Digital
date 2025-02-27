@@ -29,7 +29,8 @@ namespace Biblioteca_digital.Controllers;
            _PrestamosRepositorio = PrestamosRepositorio;
         }
 
-        [HttpPost("")]
+    // Endpoint para crear un nuevo libro (solo accesible por administradores)
+    [HttpPost("")]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult<dynamic>> Create(BooksCreatemodel request)
         {
@@ -48,7 +49,8 @@ namespace Biblioteca_digital.Controllers;
 
         }
 
-        [HttpGet("")]
+    // Endpoint para listar todos los libros con paginación
+    [HttpGet("")]
         public async Task<ActionResult<dynamic>> ListAllBooks([FromQuery] int page = 1, [FromQuery] int limit = 10)
         {
         

@@ -8,13 +8,13 @@ namespace Biblioteca_digital.Interfaces
     public interface IReporitorioBase<T> where T : class
     {
         /// <summary>
-        /// BdSet
+        /// listas de base de datos
         /// </summary>
         public DbSet<T> Set { get; }
 
 
         /// <summary>
-        /// Create a new 
+        /// Crear un nuevo registro
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -22,7 +22,7 @@ namespace Biblioteca_digital.Interfaces
 
 
         /// <summary>
-        /// 
+        /// actualizar un registro
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -30,7 +30,7 @@ namespace Biblioteca_digital.Interfaces
 
 
         /// <summary>
-        /// 
+        /// eliminar un reguistro
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -38,14 +38,14 @@ namespace Biblioteca_digital.Interfaces
 
 
         /// <summary>
-        /// 
+        /// mostrar todos los registros 
         /// </summary>
         /// <returns></returns>
         public Task<List<T>> GetAllAsync();
 
 
         /// <summary>
-        /// 
+        /// obtener por Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -53,7 +53,7 @@ namespace Biblioteca_digital.Interfaces
 
 
         /// <summary>
-        /// 
+        /// busqueda por filtro o query
         /// </summary>
         /// <param name="filter"></param>
         /// <param name="orderBy"></param>
@@ -63,7 +63,7 @@ namespace Biblioteca_digital.Interfaces
              Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] includeProperties);
 
         /// <summary>
-        /// 
+        /// resultado paginado de la base de datos 
         /// </summary>
         /// <param name="pageNumber"></param>
         /// <param name="pageSize"></param>
@@ -71,7 +71,7 @@ namespace Biblioteca_digital.Interfaces
         public  Task<RepuestaPaginada<T>> GetPagedData(int pageNumber, int pageSize);
 
         /// <summary>
-        /// Save the changes in the database and dispose the connection
+        /// guarda los cambios de la base de datos y cierra la conexion.
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>

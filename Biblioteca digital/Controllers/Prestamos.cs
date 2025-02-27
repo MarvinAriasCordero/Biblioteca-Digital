@@ -31,7 +31,7 @@ public class Prestamos : ControllerBase
         _logger = logger;// Inyección de dependencia para registrar eventos y errores
     }
 
-
+    // Endpoint para registrar un préstamo de un libro
     [HttpPost("")]
     public async Task<ActionResult<dynamic>> CreateLoan(CreateLoanModel request)
     {
@@ -74,6 +74,7 @@ public class Prestamos : ControllerBase
 
     }
 
+    // Endpoint para registrar un préstamo de un libro
     [HttpPost("withdraw")]
     public async Task<ActionResult<dynamic>> CreateWithdraw(CreateWithdraw request)
     {
@@ -118,7 +119,10 @@ public class Prestamos : ControllerBase
         }
         catch(Exception ex)
         {
+
+            // Registra el error en los logs
             _logger.LogInformation("Hemos tenido un error procesando su solicitud {id}", ex.Message);
+
             return  Problem( "Hemos tenido un error procesando su solicitud" );
         }
 
