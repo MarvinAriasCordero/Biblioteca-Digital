@@ -88,6 +88,11 @@ public class Prestamos : ControllerBase
                 return BadRequest(new { Error = $"No existe el prestamo: {request.PrestamoId}" });
             }
 
+            if(prestamo.Estado == Prestamo.EstadoPrestamo.DEVUELTO)
+            {
+                return BadRequest(new { Error = $"El prestamo: {request.PrestamoId} ya fue devuelto!" });
+            }
+
             // Si el prestamo es de otro usuario
             if (!prestamo.UsuarioId.Equals(userId))
             {

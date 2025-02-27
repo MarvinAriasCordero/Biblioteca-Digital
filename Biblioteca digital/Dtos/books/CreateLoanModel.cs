@@ -6,7 +6,6 @@ namespace Biblioteca_digital.Dtos.books
     {
         [Required]
         public string bookid { get; set; } = string.Empty;  
-        public string userId { get; set; } = string.Empty ;
         [Required]
         public DateOnly FechaReserva { get; set; }
         [Required]
