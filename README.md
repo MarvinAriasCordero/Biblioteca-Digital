@@ -2,15 +2,15 @@
 
 ## Principales funcionalidades:
 ### Autenticacion
-- Login
-- Registro
+- Login  api/v1/auth/login
+- Registro api/v1/auth/register
 ### Books
 - Lista de Libros api/v1/books?page=1&limit=10
 - Crear un Libro  api/v1/books
 - Presta un Libro api/v1/loan
 - Devolver un libro api/v1/loan/withdraw
 
- ###  Instalacion
+ ###  Instalación
 
  ### Uso de SQL Server como base de datos 
  El projecto usa una base de datos en Memoria. Para usar SQL Server 
@@ -26,7 +26,7 @@ builder.Services.AddDbContext<BibliotecaDbContext>(options =>
 
 
  
- Si se va a ejecutar en modo debug puede descomentar la funcion 
+ Si se va a ejecutar en modo debug puede descomentar la función 
  para efectuar una migracion de la base de datos usando Code-first.
 
  ```csharp
@@ -37,7 +37,7 @@ builder.Services.AddDbContext<BibliotecaDbContext>(options =>
     ServicioMigracionData.InicializarMigracionDeDatos(app);
 }
  ```
-De lo contrario debe efectuar las migraciones antes de probar la aplicacion
+De lo contrario debe efectuar las migraciones antes de probar la aplicación
 para efectuar las migraciones primero debe descargar el componente ef-tool
 ```
 dotnet tool update --global dotnet-ef
@@ -81,4 +81,4 @@ Ubicarse en la carpeta raiz del projecto y correr el projecto usando docker-comp
  SQL Server/SQLlite
  Entity Framework Core
  Identity
- Docker / Docker compose (para puruebas y despliegue local)
+ Docker / Docker compose (para pruebas y despliegue local)
