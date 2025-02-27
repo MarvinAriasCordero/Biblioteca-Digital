@@ -10,7 +10,6 @@
 - Presta un Libro api/v1/loan
 - Devolver un libro api/v1/loan/withdraw
 
-- 
  ###  Instalacion
 
  ### Uso de SQL Server como base de datos 
