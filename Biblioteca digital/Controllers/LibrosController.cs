@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Biblioteca_digital.Controllers
 {
-        [ApiController]
+
+    /// Controlador para gestionar los libros en la biblioteca digital.
+    /// Permite la creación y consulta de libros.
+    [ApiController]
         [Route("/api/v1/[controller]")]
-        [Authorize]
-        public class librosController : ControllerBase
+        [Authorize] // Requiere autenticación para acceder a los endpoints
+    public class librosController : ControllerBase
         {
             private readonly UserManager<Usuario> _userManager;
             private readonly IServicioAutenticacion _authService;
             private readonly IReporitorioBase<Libro> _Librosrepositorio;
 
-            public librosController(UserManager<Usuario> userManager,
+        // Constructor que inyecta las dependencias necesarias para la gestión de libros.
+        public librosController(UserManager<Usuario> userManager,
                 IServicioAutenticacion authService, IReporitorioBase<Libro> Librosrepositorio)
             {
                 _userManager = userManager;
@@ -24,11 +28,14 @@ namespace Biblioteca_digital.Controllers
                _Librosrepositorio = Librosrepositorio;
             }
 
-            [HttpPost("books")]
-            [Authorize(Roles ="Admin")]
-            public async Task<ActionResult<dynamic>> Create(BooksCreatemodel request)
+        // Crea un nuevo libro en la biblioteca.
+        /// Solo accesible para usuarios con rol "Admin".
+        [HttpPost("books")]
+            [Authorize(Roles ="Admin")] // Solo los administradores pueden crear libros
+        public async Task<ActionResult<dynamic>> Create(BooksCreatemodel request)
             {
 
+        // Se crea una nueva instancia del libro con los datos proporcionados.
             Libro libro = new Libro
             {
                 Titulo = request.Titulo,
@@ -38,6 +45,7 @@ namespace Biblioteca_digital.Controllers
                 Disponible = request.Estado
             };
 
+            // Se guarda el libro en la base de datos
 
             await _Librosrepositorio.CreateAsync(libro);
 
@@ -45,7 +53,9 @@ namespace Biblioteca_digital.Controllers
 
             }
 
-            [HttpGet("books")]
+        // Obtiene la lista de todos los libros disponibles en la biblioteca.
+
+        [HttpGet("books")]
             public async Task<ActionResult<dynamic>> ListAllBooks()
             {
 
@@ -58,6 +68,7 @@ namespace Biblioteca_digital.Controllers
 
         }
 
+    // Modelo de datos para la creación de un libro.
     public record BooksCreatemodel
     {
         public string? Titulo { get; set; } = string.Empty;
