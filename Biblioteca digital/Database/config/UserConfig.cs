@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Biblioteca_digital.Database.config
 {
-    public static class AutenticacionConfig 
+    public static class UserConfig 
     {
         public static void ConfigureAuthbasic(this ModelBuilder modelBuilder)
         {
@@ -17,13 +17,13 @@ namespace Biblioteca_digital.Database.config
                 );
             var adminUser = new Usuario
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString()
                 UserName = "admin",
                 NormalizedUserName = "admin".ToUpper(),
                 Email = "admin@shop.com",
                 NormalizedEmail = "admin@shop.com".ToUpper(),
                 EmailConfirmed = true
-            };
+            }
 
             var passworHasher = new PasswordHasher<Usuario>();
             adminUser.PasswordHash = passworHasher.HashPassword(adminUser, "admin@22");
