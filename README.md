@@ -1,8 +1,5 @@
 # Biblioteca-Digital
 
-## Construir el proyecto
-ejecutamos el comando 
-
 ## Principales funcionalidades:
 ### Autenticacion
 - Login
