@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Biblioteca_digital.Dtos.books;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq.Expressions;
 
 namespace Biblioteca_digital.Interfaces
@@ -59,6 +61,14 @@ namespace Biblioteca_digital.Interfaces
         /// <returns></returns>
         public Task<List<T>> GetAsync(Expression<Func<T, bool>>? filter = null,
              Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] includeProperties);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public  Task<RepuestaPaginada<T>> GetPagedData(int pageNumber, int pageSize);
 
         /// <summary>
         /// Save the changes in the database and dispose the connection

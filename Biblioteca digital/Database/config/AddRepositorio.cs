@@ -1,5 +1,5 @@
-﻿using Biblioteca_digital.Interfaces;
-using Biblioteca_digital.Repositorios;
+﻿using Biblioteca_digital.Database.Repositorios;
+using Biblioteca_digital.Interfaces;
 using Biblioteca_digital.Servicios;
 using Microsoft.AspNetCore.Authentication;
 

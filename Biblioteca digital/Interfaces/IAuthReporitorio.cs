@@ -1,6 +1,4 @@
-﻿
-
-using Biblioteca_digital.Dtos;
+﻿using Biblioteca_digital.Dtos.login;
 
 namespace Biblioteca_digital.Interfaces
 {

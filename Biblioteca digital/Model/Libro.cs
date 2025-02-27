@@ -4,7 +4,7 @@
     public class Libro
     {
         // Identificador único del libro.
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         // Título del libro.
         public string? Titulo { get; set; } = string.Empty;

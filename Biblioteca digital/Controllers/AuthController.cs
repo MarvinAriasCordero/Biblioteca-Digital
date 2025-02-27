@@ -1,4 +1,4 @@
-﻿using Biblioteca_digital.Dtos;
+﻿using Biblioteca_digital.Dtos.login;
 using Biblioteca_digital.Interfaces;
 using Biblioteca_digital.Model;
 using Microsoft.AspNetCore.Identity;
@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Biblioteca_digital.Controllers
 {
-        [ApiController]
+    [ApiController]
         [Route("/api/v1/[controller]")]
         public class authController : ControllerBase
         {

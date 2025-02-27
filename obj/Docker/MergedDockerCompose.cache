@@ -1,10 +1,10 @@
-name: dockercompose17800414627592492344
+name: dockercompose8283131970623557029
 services:
   SqlServer:
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: '@OdiN.7072$$'
-    image: mcr.microsoft.com/azure-sql-edge
+      SA_PASSWORD: LibCmos.145!
+    image: mcr.microsoft.com/mssql/server:2022-latest
     networks:
       default: null
     ports:
@@ -14,7 +14,7 @@ services:
         protocol: tcp
   bibliotecadigital:
     build:
-      context: C:\Users\Acer\source\repos\Biblioteca digital\Biblioteca-Digital
+      context: C:\desings\odin99\Bibliotecadigital\prueba\Biblioteca-Digital
       dockerfile: Biblioteca digital/Dockerfile
     depends_on:
       SqlServer:
@@ -33,17 +33,17 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\Acer\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\JuanCarlosEspinozaZu\AppData\Roaming/Microsoft/UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\Acer\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\JuanCarlosEspinozaZu\AppData\Roaming/ASP.NET/Https
         target: /root/.aspnet/https
         read_only: true
         bind:
           create_host_path: true
 networks:
   default:
-    name: dockercompose17800414627592492344_default
+    name: dockercompose8283131970623557029_default

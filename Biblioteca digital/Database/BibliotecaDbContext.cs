@@ -21,6 +21,8 @@ namespace Biblioteca_digital.Database
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<Prestamo>().HasOne(p => p.Libro); 
+         
             builder.ConfigureAuthbasic();
 
             //builder.SetUpDomainContext();

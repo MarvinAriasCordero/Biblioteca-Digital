@@ -1,4 +1,4 @@
-﻿using Biblioteca_digital.Dtos;
+﻿using Biblioteca_digital.Dtos.login;
 using Biblioteca_digital.Interfaces;
 using Biblioteca_digital.Model;
 using Microsoft.AspNetCore.Identity;
