@@ -30,7 +30,7 @@ namespace Biblioteca_digital.Controllers;
         }
 
         [HttpPost("")]
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<dynamic>> Create(BooksCreatemodel request)
         {
         Libro libro = new Libro
@@ -58,73 +58,73 @@ namespace Biblioteca_digital.Controllers;
 
         }
 
-    [HttpPost("loan")]
-    public async Task<ActionResult<dynamic>> CreateLoan(CreateLoanModel request)
-    {
+    //[HttpPost("loan")]
+    //public async Task<ActionResult<dynamic>> CreateLoan(CreateLoanModel request)
+    //{
 
-        var libro = await _Librosrepositorio.GetByIdAsync( Guid.Parse(request.bookid));
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (!libro.Disponible)
-        {
-            return BadRequest(new { Error = $"Libro ${request.bookid} no esta disponible!" });
-        }
+    //    var libro = await _Librosrepositorio.GetByIdAsync( Guid.Parse(request.bookid));
+    //    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    //    if (!libro.Disponible)
+    //    {
+    //        return BadRequest(new { Error = $"Libro ${request.bookid} no esta disponible!" });
+    //    }
 
-        var prestamo = new Prestamo
-        {
-            UsuarioId = userId ?? "",
-            LibroId = request.bookid,
-            Libro = libro,
-            FechaPrestamo = request.FechaReserva.ToDateTime(TimeOnly.MinValue),
-            FechaDevolucion = request.FechaEntrega.ToDateTime(TimeOnly.MinValue),
-            Estado = Prestamo.EstadoPrestamo.PRESTADO
+    //    var prestamo = new Prestamo
+    //    {
+    //        UsuarioId = userId ?? "",
+    //        LibroId = request.bookid,
+    //        Libro = libro,
+    //        FechaPrestamo = request.FechaReserva.ToDateTime(TimeOnly.MinValue),
+    //        FechaDevolucion = request.FechaEntrega.ToDateTime(TimeOnly.MinValue),
+    //        Estado = Prestamo.EstadoPrestamo.PRESTADO
 
-        };
+    //    };
 
-        await _PrestamosRepositorio.CreateAsync(prestamo);
-        libro.Disponible = false;
-        await _Librosrepositorio.UpdateAsync(libro);
+    //    await _PrestamosRepositorio.CreateAsync(prestamo);
+    //    libro.Disponible = false;
+    //    await _Librosrepositorio.UpdateAsync(libro);
 
 
-        await _PrestamosRepositorio.SaveChangesAsync();
+    //    await _PrestamosRepositorio.SaveChangesAsync();
 
-        return Ok(new { Prestamo = prestamo });
+    //    return Ok(new { Prestamo = prestamo });
 
-    }
+    //}
 
-    [HttpPost("loan/witdraw")]
-    public async Task<ActionResult<dynamic>> CreateWithdraw(CreateWithdraw request)
-    {
+    //[HttpPost("loan/witdraw")]
+    //public async Task<ActionResult<dynamic>> CreateWithdraw(CreateWithdraw request)
+    //{
 
        
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var prestamo = await _PrestamosRepositorio.GetByIdAsync( Guid.Parse(request.PrestamoId));
+    //    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    //    var prestamo = await _PrestamosRepositorio.GetByIdAsync( Guid.Parse(request.PrestamoId));
 
-        if (!prestamo.UsuarioId.Equals(userId))
-        {
-            return BadRequest(new { Error = $"Prestamo ${request.PrestamoId} no le pertenece" });
-        }
+    //    if (!prestamo.UsuarioId.Equals(userId))
+    //    {
+    //        return BadRequest(new { Error = $"Prestamo ${request.PrestamoId} no le pertenece" });
+    //    }
 
-        if (prestamo == null)
-        {
-            return BadRequest(new { Error = $"No existe el prestamo: {request.PrestamoId}" });
-        }
+    //    if (prestamo == null)
+    //    {
+    //        return BadRequest(new { Error = $"No existe el prestamo: {request.PrestamoId}" });
+    //    }
 
-        var libro = await _Librosrepositorio.GetByIdAsync( Guid.Parse(prestamo.LibroId));
+    //    var libro = await _Librosrepositorio.GetByIdAsync( Guid.Parse(prestamo.LibroId));
 
-        prestamo.Estado = Prestamo.EstadoPrestamo.DEVUELTO;
+    //    prestamo.Estado = Prestamo.EstadoPrestamo.DEVUELTO;
 
-        libro.Disponible = true;
-
-
-        await _PrestamosRepositorio.UpdateAsync(prestamo);
-        await _Librosrepositorio.UpdateAsync(libro);
+    //    libro.Disponible = true;
 
 
-        await _PrestamosRepositorio.SaveChangesAsync();
+    //    await _PrestamosRepositorio.UpdateAsync(prestamo);
+    //    await _Librosrepositorio.UpdateAsync(libro);
 
-        return Ok(new { Prestamo = prestamo });
 
-    }
+    //    await _PrestamosRepositorio.SaveChangesAsync();
+
+    //    return Ok(new { Prestamo = prestamo });
+
+    //}
 
 }
 

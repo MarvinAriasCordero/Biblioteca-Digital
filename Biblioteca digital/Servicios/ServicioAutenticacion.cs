@@ -62,6 +62,7 @@ namespace Biblioteca_digital.Servicios
             {
                 UserName = registroRequest.Name,
                 Email = registroRequest.Email,
+               
 
             };
 
@@ -69,6 +70,7 @@ namespace Biblioteca_digital.Servicios
 
             if (reuslt.Succeeded)
             {
+                await _userManager.AddToRoleAsync(user, "User");
                 return new
                 {
                     Usernam = user.UserName,
