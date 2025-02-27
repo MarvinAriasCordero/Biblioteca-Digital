@@ -43,7 +43,6 @@ namespace Biblioteca_digital.Controllers
                     context.Result = new UnauthorizedResult();
                 }
 
-
             }
         }
 }
