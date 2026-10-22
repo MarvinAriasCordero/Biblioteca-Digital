@@ -1,79 +1,107 @@
-# Biblioteca-Digital
+# Biblioteca Digital
 
-## Principales funcionalidades:
-### Autenticacion
-- Login  api/v1/auth/login
-- Registro api/v1/auth/register
-### Books
-- Lista de Libros api/v1/books?page=1&limit=10
-- Crear un Libro  api/v1/books
-- Presta un Libro api/v1/loan
-- Devolver un libro api/v1/loan/withdraw
+API REST para la gestión de una biblioteca digital, desarrollada con C# y .NET 8. Permite registrar usuarios e iniciar sesión, administrar libros y controlar los préstamos y devoluciones.
 
- ###  Instalación
+<!-- Agrega aquí una captura de la API en funcionamiento (Swagger, Postman o similar) y borra este comentario.
+Ejemplo: ![Captura de la API](docs/captura.png) -->
 
- ### Uso de SQL Server como base de datos 
- El projecto usa una base de datos en Memoria. Para usar SQL Server 
- 
-indicarlo en el contenedor de dependencias en la clase `Program.cs`
+## Tecnologías
 
- ```csharp
- 
-builder.Services.AddDbContext<BibliotecaDbContext>(options =>
-  options.UseSqlServer(connectionString));
+- C# / .NET 8
+- Entity Framework Core (migraciones code-first)
+- Identity (autenticación de usuarios)
+- SQL Server / SQLite (por defecto usa una base de datos en memoria)
+- Docker y Docker Compose (para pruebas y despliegue local)
 
- ```
+## Funcionalidades principales
 
+### Autenticación
 
- 
- Si se va a ejecutar en modo debug puede descomentar la función 
- para efectuar una migracion de la base de datos usando Code-first.
+| Endpoint | Descripción |
+|---|---|
+| `api/v1/auth/login` | Inicio de sesión |
+| `api/v1/auth/register` | Registro de usuarios |
 
- ```csharp
- if (app.Environment.IsDevelopment())
-{
-    app.UseMigrationsEndPoint();
-    
-    ServicioMigracionData.InicializarMigracionDeDatos(app);
-}
- ```
-De lo contrario debe efectuar las migraciones antes de probar la aplicación
-para efectuar las migraciones primero debe descargar el componente ef-tool
-```
-dotnet tool update --global dotnet-ef
+### Libros y préstamos
+
+| Endpoint | Descripción |
+|---|---|
+| `api/v1/books?page=1&limit=10` | Lista de libros con paginación |
+| `api/v1/books` | Crear un libro |
+| `api/v1/loan` | Prestar un libro |
+| `api/v1/loan/withdraw` | Devolver un libro |
+
+## Instalación
+
+Primero, clona el repositorio:
+
+```bash
+git clone https://github.com/MarvinAriasCordero/Biblioteca-Digital.git
+cd Biblioteca-Digital
 ```
 
-luego ejecutar en la carpeta del projecto `Biblioteca digital/ `
-```
-dotnet restore
-dotnet tool restore
-dotnet ef database update 
-````
+Por defecto el proyecto usa una **base de datos en memoria**, por lo que no necesita configuración adicional para probarlo. Para usar SQL Server hay dos opciones:
 
- ## despliege usando docker y docker-compose
+### Opción 1: Docker y Docker Compose
 
- Se dedea installar la aplicacion, una opcion muy util tanto para debug como para 
- despliegue local es usar ` Docker`, tanto en Windows como en Linux. 
+Es la opción más práctica, tanto para depuración como para despliegue local, y funciona en Windows y en Linux. Levanta la aplicación junto con una base de datos SQL Server.
 
- para desplegar la aplicacion en un contenedor de docker-compose
- asi como una base de datos SQL Server. 
+1. Crea un archivo `.env` en la raíz del proyecto con la contraseña de SQL Server:
 
-pasos para el depliegue: 
-crear un archivo `.env` en la raiz del projecto : 
+   ```
+   DB_PASSWD={tu_Contraseña_SQLServer}
+   ```
 
-```
-DB_PASSWD={tu_Contraseña_SQLServer}
-```
+   Reemplaza `{tu_Contraseña_SQLServer}` por tu contraseña y guárdala de forma segura. No subas el archivo `.env` al repositorio.
 
-Reemplazar los valores para `tu_Contraseña_SQLServer` y  `${DB_PASSWD}` con sus credenciales y guardarlos de manera segura. 
+2. Desde la raíz del proyecto, ejecuta:
 
-Ubicarse en la carpeta raiz del projecto y correr el projecto usando docker-compose
+   ```bash
+   docker-compose build
+   docker-compose up
+   ```
 
-```
- docker-compose build
- docker-compose up
-```
+### Opción 2: SQL Server instalado localmente
 
+1. En la clase `Program.cs`, indica el uso de SQL Server en el contenedor de dependencias:
+
+   ```csharp
+   builder.Services.AddDbContext<BibliotecaDbContext>(options =>
+       options.UseSqlServer(connectionString));
+   ```
+
+2. Aplica las migraciones de la base de datos de una de estas dos formas:
+
+   **En modo debug:** descomenta la función que ejecuta la migración automática (code-first) al iniciar:
+
+   ```csharp
+   if (app.Environment.IsDevelopment())
+   {
+       app.UseMigrationsEndPoint();
+
+       ServicioMigracionData.InicializarMigracionDeDatos(app);
+   }
+   ```
+
+   **De forma manual:** antes de probar la aplicación, instala la herramienta `ef-tool`:
+
+   ```bash
+   dotnet tool update --global dotnet-ef
+   ```
+
+   Luego, dentro de la carpeta `Biblioteca digital/`, ejecuta:
+
+   ```bash
+   dotnet restore
+   dotnet tool restore
+   dotnet ef database update
+   ```
+
+## Autor
+
+**Marvin Steven Arias Cordero**
+Estudiante de Informática Empresarial, Universidad de Costa Rica, Sede Guanacaste.
+[github.com/MarvinAriasCordero](https://github.com/MarvinAriasCordero)
 
 
 #### Tecnologias : 
